@@ -9,17 +9,21 @@ vector<int>a[8];
 
 void bfs(int start){
     queue<int>q;
-    q.push(start);
-    c[start] = true;
+    q.push(start);          // queue에 root를 집어넣음
+    c[start] = true;        // 집어 넣는 즉시 방문처리를 한다.
+    
     while(!q.empty()){
         int x = q.front();
         q.pop();
-        cout<<x<<' ';
+        cout<<x<<' ';       // queue의 front는 항상 방문처리가 되어있으므로 pop해주고, 출력해준다.
+        
         for(int i = 0; i < a[x].size(); i++){
             int y = a[x][i];
-            if(!c[y]){
+            if(!c[y]){      // for문을 통해 front에 해당하는 노드에 인접한 값들을 모두 확인 함
                 q.push(y);
                 c[y] = true;
+                            // 방문 하지 않았다면 queue에 집어넣어주고, 방문처리를 해준다.
+                        
             }
         }
     }
