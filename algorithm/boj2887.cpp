@@ -62,7 +62,7 @@ int dist(int x1, int x2, int y1, int y2, int z1, int z2){
     int z_d = sqrt(pow(z1-z2, 2));
     
     return min(x_d,min(y_d,z_d));
-    
+
 }
 
 bool comX(Node& a, Node&b){
